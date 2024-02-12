@@ -1,0 +1,105 @@
+button{
+    background-color: var(--background-color);
+    display: block;
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px;
+    border: none;
+    position: relative;
+
+    --background-color: #E3E3E3
+}.pop::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+    border: 3px solid var(--background-color);
+    transition: top, left, right, buttom, 100ms ease-in-out;
+    
+}
+.pop:hover::before,
+.pop:focus::before{
+    top: calc(3px * -2);
+    left: calc(3px * -2);
+    right: calc(3px * -2);
+    bottom: calc(3px * -2);
+}
+.slid::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: blue;
+
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+    
+}
+.slid:hover::before,
+.slid:focus::before{
+    transform: scaleX(1);
+}
+.slid{
+    z-index: 1;
+    transition: color 300ms ease-in-out;
+}
+.slid:hover,
+.slid:focus{
+    color: white;
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    transition:  transform 500ms ease-in-out;
+     
+    transform: scale(1.5);
+    
+}
+.circle{
+    z-index: 1;
+    overflow: hidden;
+    background-color: blue;
+    transition: color 600ms ease-in-out;
+}
+.circle:hover::before,
+.circle:hover::before{
+    transform: scale(0);
+
+}
+.circle:hover,
+.circle.focus{
+    color: white;
+}
+
+.undrline::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    background-color: blue;
+    transition: transform 600ms ease-in-out;
+
+    transform: scaleX(0);
+}
+
+.undrline:hover::before,
+.undrline:focus::before{
+    transform: scaleX(1);
+}
